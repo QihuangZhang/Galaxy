@@ -1,2 +1,2 @@
 # Galaxy
-Code for Peak Group Alignment of Mass Spectrometry Data
+Python package for Peak Group Alignment of Mass Spectrometry Data
