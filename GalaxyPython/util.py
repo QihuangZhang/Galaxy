@@ -6,6 +6,7 @@ from tqdm import tqdm
 import math
 
 def prefilter_cells(adata,min_counts=None,max_counts=None,min_genes=200,max_genes=None):
+	# Prefilter function
 	if min_genes is None and min_counts is None and max_genes is None and max_counts is None:
 		raise ValueError('Provide one of min_counts, min_genes, max_counts or max_genes.')
 	id_tmp=np.asarray([True]*adata.shape[0],dtype=bool)
