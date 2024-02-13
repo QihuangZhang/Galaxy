@@ -113,7 +113,7 @@ class AnnDataMALDI(object):
         for i in tqdm(range(self.align_group.shape[0])):
             submatrix = self.PearsonMatrixFull[(self.align_group[i,0]*9):(self.align_group[i,0]*9 + 9), (self.align_group[i,1]*9):(self.align_group[i,1]*9 + 9)]
             diagnallist = [np.nanmean(np.diag(submatrix, k=i)) for i in range(-4,5)]
-            diagnallist = [-1 if value!=value else value for value in diagnallist]  # filter out the value with NaN and change it into 0
+            diagnallist = [-1 if value!=value else value for value in diagnallist]  # filter out the value with NaN and change it into -1
             if (max(diagnallist)>threshould)|ignore:
                 change = -4 + diagnallist.index(max(diagnallist))
                 midindexint = list(self.mz_valueUnk.index).index(self.midpoints_unk[self.align_group[i,0]])
